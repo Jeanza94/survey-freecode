@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Survey Form</title>
+    <style>
+      body
+      {
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+        background: linear-gradient(346deg, rgba(2,0,36,1) 0%, rgba(82,145,138,0.9948354341736695) 43%, rgba(0,212,255,1) 100%);
+        color: white;
+      }
+      .titles
+      {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+      }
+      #title
+      {
+        margin-bottom:4px;
+      }
+      #description
+      {
+        margin-top: 0px;
+      }
+      #survey-form
+      {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #name, #email, #number, #dropdown
+      {
+        width: 640px;
+        height: 24px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        padding-left: 8px;
+        font-weight: bold;
+      }
+      #dropdown
+      {
+        height: 30px;
+        width: 648px;
+      }
+      #name-label, #email-label, #number-label, #dropdown-label
+      {
+       font-weight: bold;
+      }
+      .radios
+      {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-gap: 8px 24px;
+      }
+      .activities
+      {
+        margin: 8px 0 8px 0;
+      }
+      .fieldset
+      {
+        margin-top: 16px;
+      }
+      .comments
+      {
+        margin-bottom: 0px;
+      }
+      .opinion-client
+      {
+        font-size: 14 px;
+      }
+      @media (width:640px)
+      {
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="titles">
+      <h1 id="title">Music in life, it is the best choise for a relaxing day</h1>
+      <p id="description">We want to improve your experience in our page, so we need
+        that you help us to enhance the music here in your favorite place.
+      </p>
+    </div>
+    <form id="survey-form">
+      <label for="name" id="name-label">Name</label>
+      <input type="text" id="name" name="name" placeholder="Jean Carlo Zapata López" required>
+
+      <label for="email" id="email-label">Email</label>
+      <input type="email" id="email" name="email" placeholder="jeanza94@hotmail.com"
+       pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+       title="Poner el Formato del correo como en el placeholder" required>
+
+       <label for="number" id="number-label">Identification</label>
+       <input type="number" name="number" id="number" min="1" max="3000" pattern="[0-9]{7,10}"
+       placeholder="2930">
+
+      <label for="dropdown" id="dropdown-label">Here we have some choices of music genres,
+      chose your favorite</label>
+      <select id="dropdown" name="music-genres" placeholder="select">
+        <option value="" disabled selected hidden>Select your favorite genre</option>
+        <option value="Rock">Rock</option>
+        <option value="Pop">Pop</option>
+        <option value="Trap">Trap</option>
+        <option value="Rap">Rap</option>
+        <option value="Regueton">Regueton</option>
+        <option value="Popular">Popular</option>
+        <option value="Electronica">Electronica</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <p class="activities">Tell us, when do you listen to music?</p>
+      <div class="radios">
+        <input type="radio" id="radio-1" name="radio" value="sleeping" checked>
+        <label for="radio-1">When you are sleeping</label>
+
+        <input type="radio" id="radio-2" name="radio" value="free-time">
+        <label for="radio-2">In your free time</label>
+
+        <input type="radio" id="radio-3" name="radio" value="free-time">
+        <label for="radio-3">Doing your homework</label>
+
+        <input type="radio" id="radio-4" name="radio" value="free-time">
+        <label for="radio-4">Doing sports</label>
+
+        <input type="radio" id="radio-5" name="radio" value="free-time">
+        <label for="radio-5">Reading a book</label>
+      </div>
+
+       <fieldset class="fieldset">
+         <legend>Which genre (that is not in our page) would you like to hear?</legend>
+         <label for="checkbox-1">Jazz</label>
+         <input type="checkbox" id="checkbox-1" name="checkbox" value="Jazz">
+
+         <label for="checkbox-2">Folk</label>
+         <input type="checkbox" id="checkbox-2" name="checkbox" value="Folk">
+
+         <label for="checkbox-3">Bachata</label>
+         <input type="checkbox" id="checkbox-3" name="checkbox" value="Bachata">
+
+         <label for="checkbox-4">Hip Hop</label>
+         <input type="checkbox" id="checkbox-4" name="checkbox" value="Hip-Hop">
+
+         <label for="checkbox-5">Heavy Metal</label>
+         <input type="checkbox" id="checkbox-5" name="checkbox" value="Heavy metal" checked>
+       </fieldset>
+
+       <p class="comments">Any comments or suggestions?</p>
+
+       <textarea class="opinion-client" rows="8" cols="70" placeholder="Please, we want to know how we can be better for our clients, let us know"></textarea>
+
+       <button type="submit" id="submit">Submit</button>
+    </form>
+  </body>
+</html>
